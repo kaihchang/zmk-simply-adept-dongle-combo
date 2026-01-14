@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "kai_simply_adept_layout.dtsi"
+#include "kai_simply_adept-layouts.dtsi"
 
 / {
     chosen {
@@ -7,7 +7,7 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    default_transform: keymap_transform_0 {
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <38>;
         rows = <1>;
