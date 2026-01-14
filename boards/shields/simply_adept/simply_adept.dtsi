@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "kai_simply_adept-layouts.dtsi"
+#include "simply_adept-layouts.dtsi"
 
 / {
     chosen {

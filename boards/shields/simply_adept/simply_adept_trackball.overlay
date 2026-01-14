@@ -1,7 +1,7 @@
-#include "kai_simply_adept.dtsi"
+#include "simply_adept.dtsi"
 #include "pmw3610.dtsi"
 #include "split_input.dtsi"
-#include "kai_simply_adept-layouts.dtsi"
+#include "simply_adept-layouts.dtsi"
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors/report_rate_limit.dtsi>

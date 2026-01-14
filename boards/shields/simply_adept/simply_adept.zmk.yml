@@ -1,6 +1,6 @@
 file_format: "1"
-id: kai_simply_adept
-name: kai_simply_adept
+id: simply_adept
+name: simply_adept
 type: shield
 url: https://github.com/kaihchang/zmk-simply-adept-dongle-combo
 requires:
@@ -10,7 +10,7 @@ features:
   - keys
   - trackball
 siblings:
-  - kai_simply_adept_left
-  - kai_simply_adept_right
-  - kai_simply_adept_dongle
-  - kai_simply_adept_trackball
+  - simply_adept_left
+  - simply_adept_right
+  - simply_adept_dongle
+  - simply_adept_trackball

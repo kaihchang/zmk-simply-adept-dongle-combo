@@ -4,9 +4,9 @@
     so put all input processors you want to take effect in input listener here.
 */
 
-#include "kai_simply_adept.dtsi"
+#include "simply_adept.dtsi"
 #include "split_input.dtsi"
-#include "kai_simply_adept-layouts.dtsi"
+#include "simply_adept-layouts.dtsi"
 #include <input/processors.dtsi>
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
