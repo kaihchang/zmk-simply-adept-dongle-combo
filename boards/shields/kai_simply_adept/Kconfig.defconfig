@@ -1,0 +1,28 @@
+if SHIELD_KAI_SIMPLY_ADEPT_LEFT || SHIELD_KAI_SIMPLY_ADEPT_RIGHT || SHIELD_KAI_SIMPLY_ADEPT_DONGLE || SHIELD_KAI_SIMPLY_ADEPT_TRACKBALL
+config ZMK_SPLIT
+    default y
+config ZMK_POINTING
+    default y
+endif
+
+if SHIELD_KAI_SIMPLY_ADEPT_DONGLE
+config ZMK_KEYBOARD_NAME
+    default "Kai Simply Adept"
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+# Set this to the number of peripherals your dongle will have.
+# For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 3
+# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+config BT_MAX_CONN
+    default 3
+# Set this to the same number as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 3
+endif
+
+if SHIELD_KAI_SIMPLY_ADEPT_TRACKBALL
+config SPI
+    default y
+endif

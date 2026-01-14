@@ -1,0 +1,65 @@
+// Can't have the kscan0 here, that one's physical
+/* 
+    Central side is the only one that is aware of .keymap,
+    so put all input processors you want to take effect in input listener here.
+*/
+
+#include "kai_simply_adept.dtsi"
+#include "split_input.dtsi"
+#include "kai_simply_adept_layout.dtsi"
+#include <input/processors.dtsi>
+#include <input/processors/xyz.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
+
+&physical_layout0 {
+    transform = <&default_transform>;
+};
+
+/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
+&pointer_accel { // this needs to be put BEFORE input-listener
+    input-type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_X INPUT_REL_Y>;
+    sensitivity = <800>;         // 0.8x base sensitivity
+	min-factor = <800>;			  // 0.8x minimum for percision
+    max-factor = <3000>;          // 3.0x maximum acceleration
+    acceleration-exponent = <1>;  // Advanced exponential curve (1-5)
+    y-boost = <1000>;             // 1.0x Y-axis boost for widescreen
+    speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
+    speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
+    min-factor = <1000>;          // 1.0x minimum (no deceleration)
+	sensor-dpi = <600>;
+    track-remainders;             // accumulate fractional movements
+};
+
+/* local trackball input split device child node, receiving events from the peripheral and raising them locally. */
+// look into <split_input.dtsi> for mother node.
+&trackball_split_listener {
+	status = "okay";
+    input-processors =
+        <&zip_zxy>, // decompressor by badjeff
+        <&pointer_accel>,
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+	scroll {
+		layers = <5>; // SCROLL
+		input-processors =
+            <&zip_zxy>, // decompressor by badjeff
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 16>,
+            <&zip_xy_to_scroll_mapper>;
+	};
+};
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};

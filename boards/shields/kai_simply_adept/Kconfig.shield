@@ -1,0 +1,11 @@
+config SHIELD_KAI_SIMPLY_ADEPT_LEFT
+    def_bool $(shields_list_contains,kai_simply_adept_left)
+
+config SHIELD_KAI_SIMPLY_ADEPT_RIGHT
+    def_bool $(shields_list_contains,kai_simply_adept_right)
+
+config SHIELD_KAI_SIMPLY_ADEPT_DONGLE
+    def_bool $(shields_list_contains,kai_simply_adept_dongle)
+
+config SHIELD_KAI_SIMPLY_ADEPT_TRACKBALL
+    def_bool $(shields_list_contains,kai_simply_adept_trackball)

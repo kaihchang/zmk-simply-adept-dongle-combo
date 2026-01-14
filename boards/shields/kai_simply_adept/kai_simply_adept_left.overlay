@@ -1,0 +1,29 @@
+#include "kai_simply_adept.dtsi"
+#include "kai_simply_adept_layout.dtsi"
+
+/*
+ Complains about not having "input property in peripheral input splits, but also don't recognise <&trackball> if I assign one. Hmmm.
+ Maybe try pretending there's one? Since I can't quite delete it;
+ Or, move split input and listener stuffs into another .dtsi file.
+*/
+
+&kscan0 {
+    input-gpios =
+        <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_1
+        <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_2
+        <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_3
+        <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_4
+        <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_5
+        <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_6
+        <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_7
+        <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_8
+        <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_9
+        <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_10
+        <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_11
+        <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_12
+        <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_13
+        <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_14
+        <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_15
+        <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_16
+        <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_17
+};
