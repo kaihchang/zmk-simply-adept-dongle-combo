@@ -7,7 +7,7 @@ endif
 
 if SHIELD_KAI_SIMPLY_ADEPT_DONGLE
 config ZMK_KEYBOARD_NAME
-    default "Kai Simply Adept"
+    default "Kai SimplyAdept"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 # Set this to the number of peripherals your dongle will have.
