@@ -187,21 +187,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp GRAVE &kp LBKT &kp GRAVE &kp RIGHT_BRACKET &kp LEFT_ARROW &kp LEFT_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
-            label = "CNQ_MACRO";
         };
 
         highlight_macro: highlight_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HOME &kp LS(END)>;
-            label = "HIGHLIGHT_MACRO";
         };
     };
 
     behaviors {
         holdtap_comma: holdtap_comma {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_COMMA";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -212,7 +209,6 @@
 
         holdtap_period: holdtap_period {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_PERIOD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -222,7 +218,6 @@
 
         holdtap_equal_enter: holdtap_equal_enter {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_EQUAL_ENTER";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
