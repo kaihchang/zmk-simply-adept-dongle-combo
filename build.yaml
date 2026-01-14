@@ -1,11 +1,11 @@
 include:
   - board: nice_nano
-    shield: kai_simply_adept_left led_indicator
+    shield: kai_simply_adept_left rgbled_adapter
     # Add these cmake-args to the peripherals you wish to use with the dongle
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   - board: nice_nano
-    shield: kai_simply_adept_right led_indicator
+    shield: kai_simply_adept_right rgbled_adapter
     # Add these cmake-args to the peripherals you wish to use with the dongle
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
