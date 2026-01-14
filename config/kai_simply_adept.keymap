@@ -2,6 +2,8 @@
     No chosen zmk,matrix-transform here if using ZMK stuidio.
     https://zmk.dev/docs/features/studio#adding-zmk-studio-support-to-a-keyboard
 */
+// keep all behavior settings for zmk studio
+#define ZMK_BEHAVIORS_OMIT_KT
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -12,9 +14,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-
-// keep all behavior settings for zmk studio
-#define ZMK_BEHAVIORS_OMIT_KT
 
 #define BASE 0
 #define NUM 1
