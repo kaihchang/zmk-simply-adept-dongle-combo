@@ -7,7 +7,7 @@
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
-	col-offset = <34>;
+	col-offset = <35>;
 };
 
 &spi0 {
