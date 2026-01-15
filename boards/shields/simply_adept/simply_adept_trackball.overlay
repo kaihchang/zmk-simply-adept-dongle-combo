@@ -7,7 +7,6 @@
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
-    // 35的話少2格
 	col-offset = <33>;
 };
 
