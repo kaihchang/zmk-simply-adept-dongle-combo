@@ -7,7 +7,7 @@
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
-	col-offset = <35>;
+	col-offset = <34>;
 };
 
 &spi0 {
@@ -18,7 +18,12 @@
 	device = <&trackball>;
 	input-processors =
 		<&zip_report_rate_limit 8>, // rate limiter by badjeff
+        /* append XY-to-Z compressor on transmitting side */
 		<&zip_xyz>; // compressor by badjeff
+};
+
+&zip_report_rate_limit {
+    limit-ble-only;
 };
 
 / {

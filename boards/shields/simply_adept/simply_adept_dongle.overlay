@@ -32,6 +32,7 @@
 &trackball_split_listener {
 	status = "okay";
     input-processors =
+        /* preppend Z-to-XY processor on receiving side */
         <&zip_zxy>, // decompressor by badjeff
         <&pointer_accel>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
