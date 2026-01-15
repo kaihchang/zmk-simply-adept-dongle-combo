@@ -1,6 +1,6 @@
-#include "simply_adept.dtsi"
 #include "pmw3610.dtsi"
 #include "split_input.dtsi"
+#include "simply_adept.dtsi"
 #include "simply_adept-layouts.dtsi"
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -25,12 +25,12 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
         input-gpios =
-            <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_1
-            <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_2
-            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_6
-            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_5
-            <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_3
-            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_4
+            <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_34
+            <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_35
+            <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_36
+            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_37
+            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_38
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_39
         wakeup-source;
     };
 };
