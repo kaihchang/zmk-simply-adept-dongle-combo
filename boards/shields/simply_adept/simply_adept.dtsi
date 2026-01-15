@@ -20,9 +20,4 @@
                                    RC(0,37)                     RC(0,38)
         >;
     };
-
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-    };
 };
