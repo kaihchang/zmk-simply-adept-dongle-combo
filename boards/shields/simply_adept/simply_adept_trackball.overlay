@@ -21,12 +21,17 @@
 		<&zip_xyz>; // compressor by badjeff
 };
 
-&kscan0 {
-    input-gpios =
-        <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_1
-        <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_2
-        <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_6
-        <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_5
-        <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_3
-        <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_4
+/ {
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios =
+            <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_1
+            <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_2
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_6
+            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_5
+            <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_3
+            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_4
+        wakeup-source;
+    };
 };
+
