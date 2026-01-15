@@ -10,21 +10,9 @@
 #include <input/processors.dtsi>
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <behaviors/input_gestures_accel.dtsi>
 
 &physical_layout0 {
     transform = <&default_transform>;
-};
-
-/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
-&pointer_accel { // this needs to be put BEFORE input-listener
-    input-type = <INPUT_EV_REL>;
-	min-factor = <600>;			  // 0.6x minimum for percision
-    max-factor = <3000>;          // 3.0x maximum acceleration
-    speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
-    speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
-    acceleration-exponent = <1>;  // 1:linear, 2:quadratic, 3:cubic
-	track-remainders;             // Accumulate fractional movements
 };
 
 /* local trackball input split device child node, receiving events from the peripheral and raising them locally. */
@@ -33,8 +21,7 @@
 	status = "okay";
     input-processors =
         <&zip_zxy>, // decompressor by badjeff. This needs to be at the head of the pipeline.
-        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-        <&pointer_accel>;
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =

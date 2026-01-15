@@ -4,6 +4,7 @@
 #include "simply_adept-layouts.dtsi"
 #include <input/processors/xyz.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
@@ -14,9 +15,21 @@
     status = "okay";
 };
 
+/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
+&pointer_accel { // this needs to be put BEFORE input-listener
+    input-type = <INPUT_EV_REL>;
+	min-factor = <600>;			  // 0.6x minimum for percision
+    max-factor = <3000>;          // 3.0x maximum acceleration
+    speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
+    speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
+    acceleration-exponent = <1>;  // 1:linear, 2:quadratic, 3:cubic
+	track-remainders;             // Accumulate fractional movements
+};
+
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
 	input-processors =
+        <&pointer_accel>, // badjeff said to put this before <&zip_xyz>. Do this part when you still have raw XY data.
         <&zip_report_rate_limit 8>, // badjeff's limiter. Put this before <&zip_xyz>.
 		<&zip_xyz>; // compressor by badjeff
 };
