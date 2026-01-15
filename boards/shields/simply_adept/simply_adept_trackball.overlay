@@ -48,10 +48,10 @@
         input-gpios =
             <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_1
             <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_2
-            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_6
-            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_5
             <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_3
-            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // kicad sw_4
+            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_4
+            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_5
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // kicad sw_6
         wakeup-source;
     };
 };
