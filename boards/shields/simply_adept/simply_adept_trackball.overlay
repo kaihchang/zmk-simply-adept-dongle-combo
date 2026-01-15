@@ -18,8 +18,12 @@
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
 	input-processors =
-        /* append XY-to-Z compressor on transmitting side */
+        <&zip_report_rate_limit 8>, // badjeff's limiter. Put this before <&zip_xyz>.
 		<&zip_xyz>; // compressor by badjeff
+};
+
+&zip_report_rate_limit {
+    limit-ble-only;
 };
 
 / {

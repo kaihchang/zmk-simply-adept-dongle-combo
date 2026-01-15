@@ -32,10 +32,8 @@
 &trackball_split_listener {
 	status = "okay";
     input-processors =
-        /* preppend Z-to-XY processor on receiving side */
-        <&zip_zxy>, // decompressor by badjeff
+        <&zip_zxy>, // decompressor by badjeff. This needs to be at the head of the pipeline.
         <&pointer_accel>,
-        <&zip_report_rate_limit 8>, // rate limiter by badjeff
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 	scroll {
 		layers = <5>; // SCROLL
@@ -45,10 +43,6 @@
             <&zip_xy_to_scroll_mapper>,
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
 	};
-};
-
-&zip_report_rate_limit {
-    limit-ble-only;
 };
 
 / {
