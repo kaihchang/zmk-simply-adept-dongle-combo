@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/badjeff/
     - name: efogdev
       url-base: https://github.com/efogdev
-    - name: nuovotaka
-      url-base: https://github.com/nuovotaka
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
 
   projects:
     - name: zmk
@@ -30,8 +30,8 @@ manifest:
     - name: zmk-input-processor-xyz
       remote: badjeff
       revision: main
-    - name: zmk-pointing-acceleration-alpha
-      remote: nuovotaka
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
       revision: main
 
   self:

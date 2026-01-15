@@ -2,6 +2,10 @@
 #include "simply_adept-layouts.dtsi"
 
 / {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+    
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
         input-gpios =
