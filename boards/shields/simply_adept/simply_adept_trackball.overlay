@@ -7,7 +7,8 @@
 #include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
-	col-offset = <35>;
+    // 35的話少2格
+	col-offset = <33>;
 };
 
 &spi0 {
@@ -17,13 +18,8 @@
 &trackball_split_input { // local trackball *split* input device child node
 	device = <&trackball>;
 	input-processors =
-		<&zip_report_rate_limit 8>, // rate limiter by badjeff
         /* append XY-to-Z compressor on transmitting side */
 		<&zip_xyz>; // compressor by badjeff
-};
-
-&zip_report_rate_limit {
-    limit-ble-only;
 };
 
 / {

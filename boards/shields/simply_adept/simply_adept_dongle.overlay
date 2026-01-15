@@ -35,15 +35,20 @@
         /* preppend Z-to-XY processor on receiving side */
         <&zip_zxy>, // decompressor by badjeff
         <&pointer_accel>,
+        <&zip_report_rate_limit 8>, // rate limiter by badjeff
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 	scroll {
 		layers = <5>; // SCROLL
 		input-processors =
             <&zip_zxy>, // decompressor by badjeff
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 16>,
-            <&zip_xy_to_scroll_mapper>;
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
 	};
+};
+
+&zip_report_rate_limit {
+    limit-ble-only;
 };
 
 / {
