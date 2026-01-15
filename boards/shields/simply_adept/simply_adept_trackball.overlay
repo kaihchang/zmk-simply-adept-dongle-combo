@@ -28,9 +28,9 @@
             <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_34
             <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_35
             <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_36
-            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_37
+            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_37
             <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_38
-            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // sw_39
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // sw_39
         wakeup-source;
     };
 };
