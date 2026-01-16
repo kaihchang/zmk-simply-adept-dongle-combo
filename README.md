@@ -1,4 +1,7 @@
 # Kai Simple + Ploopy Adept combo, and now with dongle!
+Basically, ZMK dongle as central, connecting to 3 peripherals, left & right split and the trackball.
+
+![PXL_20260116_062725646~2](https://github.com/user-attachments/assets/970c92bf-cc5c-47c5-ad9e-16b22f8368f0)
 
 What's good about ZMK dongles?<br/>
 - Almost immediate connection and wake-up from sleep mode.<br/>
