@@ -14,7 +14,7 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   - board: xiao_ble
-    shield: simply_adept_dongle
+    shield: simply_adept_dongle prospector_adapter
     # uart snippet needed on central side for ZMK studio to work
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
