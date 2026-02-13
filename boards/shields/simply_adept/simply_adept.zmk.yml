@@ -1,0 +1,16 @@
+file_format: "1"
+id: simply_adept
+name: simply_adept
+type: shield
+url: https://github.com/kaihchang/zmk-simply-adept-dongle-combo
+requires:
+  - nice_nano
+  - xiao_ble
+features:
+  - keys
+  - trackball
+siblings:
+  - simply_adept_left
+  - simply_adept_right
+  - simply_adept_dongle
+  - simply_adept_trackball
