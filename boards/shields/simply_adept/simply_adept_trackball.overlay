@@ -1,0 +1,58 @@
+#include "pmw3610.dtsi"
+#include "split_input.dtsi"
+#include "simply_adept.dtsi"
+#include "simply_adept-layouts.dtsi"
+#include <input/processors/xyz.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <behaviors/input_gestures_accel.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
+
+&default_transform {
+	col-offset = <34>;
+};
+
+&spi0 {
+    status = "okay";
+};
+
+/* https://github.com/oleksandrmaslov/zmk-pointing-acceleration?tab=readme-ov-file#configure-acceleration */
+&pointer_accel { // this needs to be put BEFORE input-listener
+    input-type = <INPUT_EV_REL>;
+	min-factor = <600>;			  // 0.6x minimum for percision
+    max-factor = <3000>;          // 3.0x maximum acceleration
+    speed-threshold = <900>;      // Start acceleration at 900 counts/sec, just 1.5 inch/sec
+    speed-max = <1800>;           // Max acceleration at 1800 counts/sec, just 3 inch/sec
+    acceleration-exponent = <1>;  // 1:linear, 2:quadratic, 3:cubic
+	track-remainders;             // Accumulate fractional movements
+};
+
+&trackball_split_input { // local trackball *split* input device child node
+	device = <&trackball>;
+	input-processors =
+        <&pointer_accel>, // badjeff said to put this before <&zip_xyz>. Do this part when you still have raw XY data.
+        <&zip_report_rate_limit 8>, // badjeff's limiter. Put this before <&zip_xyz>.
+		<&zip_xyz>; // compressor by badjeff
+};
+
+&zip_report_rate_limit {
+    limit-ble-only;
+};
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+    
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios =
+            <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_1
+            <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_2
+            <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_3
+            <&gpio0  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_4
+            <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, // kicad sw_5
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // kicad sw_6
+        wakeup-source;
+    };
+};
+

@@ -1,0 +1,47 @@
+// Can't have the kscan0 here, that one's physical
+/* 
+    Central side is the only one that is aware of .keymap,
+    so put all input processors you want to take effect in input listener here.
+*/
+
+#include "split_input.dtsi"
+#include "simply_adept.dtsi"
+#include "simply_adept-layouts.dtsi"
+#include <input/processors.dtsi>
+#include <input/processors/xyz.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+
+&physical_layout0 {
+    transform = <&default_transform>;
+};
+
+/* local trackball input split device child node, receiving events from the peripheral and raising them locally. */
+// look into <split_input.dtsi> for mother node.
+&trackball_split_listener {
+	status = "okay";
+    input-processors =
+        <&zip_zxy>, // decompressor by badjeff. This needs to be at the head of the pipeline.
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+	scroll {
+		layers = <5>; // SCROLL
+		input-processors =
+            <&zip_zxy>, // decompressor by badjeff
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 16>,
+            <&zip_xy_to_scroll_mapper>;            
+	};
+};
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    mock_kscan: mock_kscan0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
