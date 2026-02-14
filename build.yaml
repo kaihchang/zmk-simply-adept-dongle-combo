@@ -1,26 +1,26 @@
 include:
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: simply_adept_left
     # Add these cmake-args to the peripherals you wish to use with the dongle
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: simply_adept_right
     # Add these cmake-args to the peripherals you wish to use with the dongle
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: xiao_ble//zmk
+  - board: xiao_ble
     shield: simply_adept_trackball
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: xiao_ble//zmk
+  - board: xiao_ble
     shield: simply_adept_dongle prospector_adapter
     # uart snippet needed on central side for ZMK studio to work
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: nice_nano//zmk
+  - board: nice_nano
     shield: settings_reset
 
-  - board: xiao_ble//zmk
+  - board: xiao_ble
     shield: settings_reset
