@@ -17,7 +17,7 @@ include:
     artifact-name: simply_adept_trackball
 
   - board: seeeduino_xiao_ble
-    shield: simply_adept_dongle prospector_adapter
+    shield: simply_adept_dongle dongle_screen
     # uart snippet needed on central side for ZMK studio to work
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
