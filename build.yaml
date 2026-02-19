@@ -21,7 +21,7 @@ include:
     # uart snippet needed on central side for ZMK studio to work
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: simply_adept_prospector_dongle
+    artifact-name: simply_adept_janpfischer_dongle
 
   - board: nice_nano
     shield: settings_reset
