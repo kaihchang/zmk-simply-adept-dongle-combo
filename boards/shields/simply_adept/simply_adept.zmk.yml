@@ -9,7 +9,7 @@ requires:
 features:
   - keys
   - trackball
-  - prospector_dongle
+  - janpfischer_dongle
 siblings:
   - simply_adept_left
   - simply_adept_right
