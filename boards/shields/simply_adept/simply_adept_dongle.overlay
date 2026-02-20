@@ -36,6 +36,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
+        zmk,backlight = &backlight;
     };
 
     mock_kscan: mock_kscan0 {
