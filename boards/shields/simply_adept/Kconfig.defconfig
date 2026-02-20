@@ -14,6 +14,15 @@ config ZMK_SPLIT_ROLE_CENTRAL
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 3
+
+# For Prospector display backlight control
+if ZMK_BACKLIGHT
+config PWM
+    default y
+config LED_PWM
+    default y
+endif # ZMK_BACKLIGHT
+
 endif
 
 if SHIELD_SIMPLY_ADEPT_TRACKBALL
