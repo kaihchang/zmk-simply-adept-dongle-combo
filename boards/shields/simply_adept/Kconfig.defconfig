@@ -20,3 +20,10 @@ if SHIELD_SIMPLY_ADEPT_TRACKBALL
 config SPI
     default y
 endif
+
+if ZMK_BACKLIGHT
+config PWM
+    default y
+config LED_PWM
+    default y
+endif
