@@ -1,9 +1,18 @@
-# Kai Simple + Ploopy Adept combo, and now with dongle!
-Basically, ZMK dongle as central, connecting to 3 peripherals, left & right split and the trackball.
+# Kai Simple + Ploopy Adept + Prospector combo (Zephyr 4.1 new-status-screens implemented), with auto sleep and backlight control functions!
 
+To control dongle's backlight, simply put `&bl` keycodes in the keymap.
+[Here's the list for backlight action defines.](https://zmk.dev/docs/keymaps/behaviors/backlight#behavior-binding)
+
+What I did in this branch:
+- Follow [new ZMK doc guide about LED backlight for Zephyr 4.1.](https://zmk.dev/docs/development/hardware-integration/lighting/backlight)
+- Apply Xiao_ble_zmk pinouts.
+- Add corresponding keycode to keymap.
+- Add corresponding config to dongle.conf.
+
+Here I'm having Prospector ZMK dongle as central, connecting to 3 peripherals, left & right split and the trackball.
 ![PXL_20260116_062725646~2](https://github.com/user-attachments/assets/970c92bf-cc5c-47c5-ad9e-16b22f8368f0)
 
-Also able to reach 118Hz on average with a wired dongle. Used to be less stable just connecting trackball's Xiao board via BLE.
+Also able to reach 118Hz on average with dongle. Used to be less stable just connecting trackball's Xiao board via BLE.
 <img width="2004" height="958" alt="image" src="https://github.com/user-attachments/assets/dc33b9ec-f3da-49fc-91cc-1eaf15f41cff" />
 
 I used to seperate them and connect them individually, why bundle them together after all this time?
