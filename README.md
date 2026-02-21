@@ -26,4 +26,4 @@ What I did in this branch:
 - Follow new ZMK doc guide about LED backlight for Zephyr 4.1.
 - Apply Xiao_ble_zmk pinouts.
 - Add corresponding keycode to keymap.
-- Add corresponding config to dongle.config.
+- Add corresponding config to dongle.conf.
