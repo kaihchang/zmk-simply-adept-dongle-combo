@@ -1,22 +1,32 @@
-# Kai Simple + Ploopy Adept + Prospector combo (Zephyr 4.1 new-status-screens implemented), with auto sleep and backlight control functions!
+# Kai Simple + Ploopy Adept + Prospector combo!
+Also with auto sleep and backlight control functions!</br>
 
-To control dongle's backlight, simply put `&bl` keycodes in the keymap.
-[Here's the list for backlight action defines.](https://zmk.dev/docs/keymaps/behaviors/backlight#behavior-binding)
+<img src="https://github.com/user-attachments/assets/04c563fd-fb9f-43ab-af41-0a1877ead905" height=400></br>
+<img src="https://github.com/user-attachments/assets/538fe97c-ebd7-4b54-905d-4e07acc5f020" height=400></br>
 
-What I did in this branch:
-- Follow [new ZMK doc guide about LED backlight for Zephyr 4.1.](https://zmk.dev/docs/development/hardware-integration/lighting/backlight)
-- Apply Xiao_ble_zmk pinouts.
-- Add corresponding keycode to keymap.
-- Add corresponding config to dongle.conf.
+Features:</br>
+✅ Prospector ST7789 dongle</br>
+✅ ZMK Studio</br>
+✅ Scroll with trackball</br>
+✅ Up to 125Hz wireless transmission frequency (Bluetooth's highest limitation)</br>
+✅ Cursor acceleration (faster you roll, faster you move)</br>
 
-Here I'm having Prospector ZMK dongle as central, connecting to 3 peripherals, left & right split and the trackball.
-![PXL_20260116_062725646~2](https://github.com/user-attachments/assets/970c92bf-cc5c-47c5-ad9e-16b22f8368f0)
+👉 [![Prospector Youtube demo](https://youtube.com/shorts/7Vw9d0dSeLg?feature=share/0.jpg)](https://youtube.com/shorts/7Vw9d0dSeLg?feature=share "Prospector Youtube demo") 🎞️</br>
 
-Also able to reach 118Hz on average with dongle. Used to be less stable just connecting trackball's Xiao board via BLE.
-<img width="2004" height="958" alt="image" src="https://github.com/user-attachments/assets/dc33b9ec-f3da-49fc-91cc-1eaf15f41cff" />
+To control dongle's backlight, simply put `&bl` keycodes in the keymap.</br>
+[Here's the list for backlight action defines.](https://zmk.dev/docs/keymaps/behaviors/backlight#behavior-binding)</br>
 
-I used to seperate them and connect them individually, why bundle them together after all this time?
-- I want to use keyboard keys for mouse clicks and let my right hand, which is on the trackball, to fully focus on moving the cursor. IMO this is more ergonomic.
+What I did in this branch:</br>
+- Follow [new ZMK doc guide about LED backlight for Zephyr 4.1.](https://zmk.dev/docs/development/hardware-integration/lighting/backlight)</br>
+- Apply Xiao_ble_zmk pinouts.</br>
+- Add corresponding keycode to keymap.</br>
+- Add corresponding config to dongle.conf.</br>
+
+Was able to reach 118Hz on average with dongle. Used to be less stable just connecting trackball's Xiao board via BLE.</br>
+<img src="https://github.com/user-attachments/assets/dc33b9ec-f3da-49fc-91cc-1eaf15f41cff" height=300></br>
+
+I used to seperate them and connect them individually, why bundle them together after all this time?</br>
+- I want to use keyboard keys for mouse clicks and let my right hand, which is on the trackball, to fully focus on moving the cursor. IMO this is more ergonomic.</br>
 
 What's good about ZMK dongles?<br/>
 - Almost immediate connection and wake-up from sleep mode.<br/>
