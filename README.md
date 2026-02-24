@@ -5,7 +5,7 @@ Also with auto sleep and backlight control functions!</br>
 <img src="https://github.com/user-attachments/assets/538fe97c-ebd7-4b54-905d-4e07acc5f020" height=400></br>
 
 Features:</br>
-✅ Prospector ST7789 dongle, with 4 screen options</br>
+✅ Prospector ST7789 dongle, with [4 screen options](https://github.com/carrefinho/prospector-zmk-module/tree/feat/new-status-screens)</br>
 ✅ ZMK Studio</br>
 ✅ Scroll with trackball</br>
 ✅ Up to 125Hz wireless transmission frequency (Bluetooth's highest limitation)</br>
