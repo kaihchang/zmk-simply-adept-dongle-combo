@@ -127,7 +127,7 @@
 
         combo_toggle4 {
             bindings = <&tog 4>;
-            key-positions = <14 24>;
+            key-positions = <13 23>;
             layers = <0 1 2 3>;
         };
 
