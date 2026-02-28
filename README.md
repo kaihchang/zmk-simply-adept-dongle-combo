@@ -1,6 +1,7 @@
 # Kai Simple + Ploopy Adept + Prospector combo!
 Also with auto sleep and backlight control functions!</br>
 
+<img src="https://github.com/user-attachments/assets/45ae6aa3-67da-4a8b-91a4-ed2eb50ade55" height=400></br>
 <img src="https://github.com/user-attachments/assets/04c563fd-fb9f-43ab-af41-0a1877ead905" height=400></br>
 <img src="https://github.com/user-attachments/assets/538fe97c-ebd7-4b54-905d-4e07acc5f020" height=400></br>
 
