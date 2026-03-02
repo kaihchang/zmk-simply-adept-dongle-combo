@@ -25,8 +25,10 @@ include:
 
   - board: nice_nano
     shield: settings_reset
+    snippet: zmk-usb-logging
     artifact-name: trackball_dongle_reset
 
   - board: xiao_ble
     shield: settings_reset
+    snippet: zmk-usb-logging
     artifact-name: splits_reset
